@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="NYUsdg">
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="js/angular.js"></script>
+<script src="js/main.js"></script>
+</head>
+	
+<body>
+	<div ng-controller = "SdgController">
+ 		
+        <table>
+        	<tbody>
+            	<tr ng-repeat = "res in data">
+                	<td> 
+                    	{{res.name}}
+                    </td>
+                    <td> 
+                    	{{res.discount}}
+                    </td>
+                    <td> 
+                    	{{res.created | date}}
+                    </td>
+                    <td>
+                    	<button ng-click = "remove(res._id)">
+                        	&times;
+                       	</button>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <form name="myForm" ng-submit="addNew" >Name
+    		<input type="text" ng-model="fields.name"/>Discount
+    		<input type="text" ng-model="fields.discount" />
+   			<button ng-click="addNew()">AddNew</button>
+            </form>
+	</div>
+</body>
+</html>
