@@ -31,7 +31,12 @@
                 </tr>
             </tbody>
         </table>
-        <form name="myForm" ng-submit="addNew" >Name
+        <form name="loginForm" ng-submit="login" >Account
+            <input type="text" ng-model="info.username"/>Password
+            <input type="text" ng-model="info.password" />
+            <button ng-click="login()">Login</button>
+            </form>
+        <form name="addForm" ng-submit="addNew" >Name
     		<input type="text" ng-model="fields.name"/>Discount
     		<input type="text" ng-model="fields.discount" />
    			<button ng-click="addNew()">AddNew</button>
